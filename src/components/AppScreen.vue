@@ -10,21 +10,28 @@ export default {
             store
         }
     },
+    mounted() {
+        store.loading = true;
+    },
 }
 </script>
 <template lang="">
-    <div class="container">
+    <div class="container-md container-fluid">
         <div class="row h-100">
             <div class="col-12 h-100">
-                <div class="screen h-100 w-100">
-                    <AppCards v-for="(pokemon, index) in store.pokemons" :key="index" :pokemonName="pokemon.name" :type1="pokemon.type1" :type2="pokemon.type2" :image="pokemon.imageUrl" :position="pokemon.number" :backgroundColor="pokemon.color"/>
+                <div class="screen h-100 p-5">
+                    <div class="row h-100 w-100 m-0">
+                        <AppCards v-for="(pokemon, index) in store.pokemons" :key="index" :pokemonName="pokemon.name" :type1="pokemon.type1" :type2="pokemon.type2" :image="pokemon.imageUrl" :position="pokemon.number" :backgroundColor="pokemon.color"/>
+                        <div class="p-4"></div>
+                    </div>
+                    <div>v-else</div>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <style lang="scss" scoped>
-    .container{
+    .container-md.container-fluid{
         height: calc(100% - 120px);
         margin-top: 20px;
     }
@@ -36,5 +43,13 @@ export default {
     .screen{
         background-color: #676b70 ;
         overflow: auto;
+        scrollbar-gutter: 0px;
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: rgb(170, 168, 168);
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: white;
+        }
     }
 </style>

@@ -4,7 +4,7 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="container">
+    <div class="container-md container-fluid">
         <div class="row">
             <div class="col-auto d-flex justify-content-start align-items-start p-0">
                 <button class="bottone blue mx-2"></button>
@@ -21,16 +21,16 @@ export default {
         border-radius: 50%;
         border: white 2px solid;
         &.blue{
-            @include buttons(blue, 100px)
+            @include buttons(blue, 80px)
         }
         &.red{
-            @include buttons(red,50px)
+            @include buttons(red,30px)
         }
         &.green{
-            @include buttons(green,50px)
+            @include buttons(green,30px)
         }
         &.yellow{
-            @include buttons(yellow,50px)
+            @include buttons(yellow,30px)
         }
     }
 

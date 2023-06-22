@@ -2,7 +2,7 @@ import { FALSE } from "sass";
 import { reactive } from "vue";
 
 export const store = reactive({
-    apiURL: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=13&sort=_id',
+    apiURL: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=18&sort=_id',
     pokemons: [],
-    loading : false,
+    loading : false
 })

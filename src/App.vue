@@ -10,7 +10,7 @@ export default {
   },
   data() {
     return {
-      store,
+      store
     }
   },
   mounted() {
@@ -32,6 +32,6 @@ export default {
     background-color: #b71b1b;
     width: 100vw;
     height: 100vh;
-    padding: 75px 0;
+    padding: 50px 0;
   }
 </style>
