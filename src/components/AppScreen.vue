@@ -1,18 +1,17 @@
 <script>
 import AppCards from './AppCards.vue';
+import AppLoading from './AppLoading.vue';
 import { store } from '../store';
 export default {
     components:{
-        AppCards
+        AppCards,
+        AppLoading
     },
     data() {
         return {
             store
         }
-    },
-    mounted() {
-        store.loading = true;
-    },
+    }
 }
 </script>
 <template lang="">
@@ -20,11 +19,13 @@ export default {
         <div class="row h-100">
             <div class="col-12 h-100">
                 <div class="screen h-100 p-5">
-                    <div class="row h-100 w-100 m-0">
-                        <AppCards v-for="(pokemon, index) in store.pokemons" :key="index" :pokemonName="pokemon.name" :type1="pokemon.type1" :type2="pokemon.type2" :image="pokemon.imageUrl" :position="pokemon.number" :backgroundColor="pokemon.color"/>
+                    <div v-if="store.loading" class="row h-100 w-100 m-0">
+                        <AppCards v-for="(pokemon, index) in store.pokemons" :key="index" :pokemonName="pokemon.name" :type1="pokemon.type1" :type2="pokemon.type2" :image="pokemon.imageUrl" :position="pokemon.number" :backgroundColors="store.types"/>
                         <div class="p-4"></div>
                     </div>
-                    <div>v-else</div>
+                    <div  v-else class="row h-100 w-100 m-0 align-items-center justify-content-center">
+                        <AppLoading />
+                    </div>
                 </div>
             </div>
         </div>

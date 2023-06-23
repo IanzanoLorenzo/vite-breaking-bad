@@ -16,6 +16,7 @@ export default {
   mounted() {
     axios.get(store.apiURL).then((rensp)=>{
       store.pokemons = rensp.data.docs
+      store.loading = true;
     })
   },
 }

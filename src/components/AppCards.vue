@@ -6,35 +6,13 @@ export default {
         type2   :   String,
         image   :   String,
         position:   Number,
-        backgroundColor: String
-    },
-    methods: {
-        colorBg(color){
-            let bgColor;
-            switch(color){
-                case "Grass":
-                    bgColor =  'rgb(76, 158, 76)';
-                    break;
-                case "Water":
-                    bgColor = 'rgb(76, 102, 158)';
-                    break;
-                case "Fire":
-                    bgColor = 'rgb(158, 76, 76)';
-                    break;
-                case "Bug":
-                    bgColor = 'rgb(163, 231, 99)';
-                    break;
-                default:
-                    bgColor = 'white';
-            }
-            return bgColor
-        }
-    },
+        backgroundColors: Object
+    }
 }
 </script>
 <template lang="">
-    <div class="col-6 col-xl-4 g-3">
-        <div class="card" :style="`background-color: ${colorBg(type1)};border: ${colorBg(type1)} 20px solid`">
+    <div class="col-6 col-xl-3 g-3">
+        <div class="card" :style="`background-color: ${backgroundColors[type1]};border: ${backgroundColors[type1]} 20px solid`">
             <div class="row d-flex">
                 <div class="col-12 d-flex p-0 justify-content-center">
                     <img :src="image" alt="">
@@ -58,7 +36,7 @@ export default {
             width: calc(100% - 40px);
             height: 150px;
             object-fit: scale-down;
-            background-color: white;
+            background-color: rgb(255, 255, 255);
             object-position: center;
             border-radius: 20px;
         }
