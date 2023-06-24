@@ -14,16 +14,44 @@ export default {
     }
   },
   mounted() {
-    axios.get(store.apiURL).then((rensp)=>{
-      store.pokemons = rensp.data.docs
-      store.loading = true;
-    })
+    this.axiosRequest();
+    axios.get(store.apiTypes).then((response)=>{
+      store.types = response.data
+      }
+    )
+  },
+  methods: {
+    searchByType(type, nome){
+      store.loading = false;
+      if(type !== ''){
+        store.apiURL += `&eq[type1]=${type}`;
+      }
+      // if(nome !== ''){
+      //   store.apiURL += `&q[name]=${nome}`;
+      // }
+      this.axiosRequest();
+      store.apiURL = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=18&sort=_id';
+      store.selectedType = ''
+    },
+    deleteSearching(){
+      store.loading= false;
+      store.apiURL = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=18&sort=_id';
+      store.selectedType = '';
+      this.axiosRequest();
+    },
+    axiosRequest(){
+      axios.get(store.apiURL).then((resp)=>{
+        store.pokemons = resp.data.docs;
+        store.loading = true;
+        }
+      )
+    }
   },
 }
 </script>
 <template>
 <div class="background">
-    <AppTopBar />
+    <AppTopBar @searching="searchByType(store.selectedType)" @reset="deleteSearching()"/>
     <AppScreen />
 </div>
 </template>

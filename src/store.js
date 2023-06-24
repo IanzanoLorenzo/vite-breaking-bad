@@ -1,27 +1,30 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-    apiURL: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=192&sort=_id',
+    apiURL: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=24&sort=_id',
+    apiTypes: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons/types1',
     pokemons: [],
-    types: {
-        "Bug" : 'rgb(163, 231, 99)',
-        "Dark" : 'rgb(77, 77, 77)',
-        "Dragon" : 'rgb(117,93,225)',
-        "Electric" : 'rgb(255, 255, 0)',
-        "Fairy" : 'rgb(255, 192, 203)',
-        "Fighting" : 'rgb(158, 76, 76)',
-        "Fire" : 'rgb(255, 0, 0)',
-        "Flying" : 'rgb(173, 216, 230)',
-        "Ghost" : 'rgb(44, 0, 44)',
-        "Grass" : 'rgb(76, 158, 76)',
-        "Ground" : 'rgb(158, 123, 9)',
-        "Ice" : 'rgb(106, 186, 212)',
-        "Normal" : 'rgb(190, 190, 190)',
-        "Poison" : 'rgb(128, 0, 128)',
-        "Psychic" : 'rgb(201, 0, 184)',
-        "Rock" : 'rgb(100, 50, 50)',
-        "Steel" : 'rgb(148, 148, 148)',
-        "Water" : 'rgb(0, 0, 255)'
+    types: [],
+    selectedType : '',
+    typesColors: {
+        Bug : 'rgb(163, 231, 99)',
+        Dark : 'rgb(77, 77, 77)',
+        Dragon : 'rgb(117,93,225)',
+        Electric : 'rgb(255, 255, 0)',
+        Fairy : 'rgb(255, 192, 203)',
+        Fighting : 'rgb(158, 76, 76)',
+        Fire : 'rgb(255, 0, 0)',
+        Flying : 'rgb(173, 216, 230)',
+        Ghost : 'rgb(44, 0, 44)',
+        Grass : 'rgb(76, 158, 76)',
+        Ground : 'rgb(158, 123, 9)',
+        Ice : 'rgb(106, 186, 212)',
+        Normal : 'rgb(190, 190, 190)',
+        Poison : 'rgb(128, 0, 128)',
+        Psychic : 'rgb(201, 0, 184)',
+        Rock : 'rgb(100, 50, 50)',
+        Steel : 'rgb(148, 148, 148)',
+        Water : 'rgb(0, 0, 255)'
     },
     loading : false
 })

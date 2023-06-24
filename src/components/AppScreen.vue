@@ -20,7 +20,7 @@ export default {
             <div class="col-12 h-100">
                 <div class="screen h-100 p-5">
                     <div v-if="store.loading" class="row h-100 w-100 m-0">
-                        <AppCards v-for="(pokemon, index) in store.pokemons" :key="index" :pokemonName="pokemon.name" :type1="pokemon.type1" :type2="pokemon.type2" :image="pokemon.imageUrl" :position="pokemon.number" :backgroundColors="store.types"/>
+                        <AppCards v-for="(pokemon, index) in store.pokemons" :key="index" :pokemonName="pokemon.name" :type1="pokemon.type1" :type2="pokemon.type2" :image="pokemon.imageUrl" :position="pokemon.number" :backgroundColors="store.typesColors"/>
                         <div class="p-4"></div>
                     </div>
                     <div  v-else class="row h-100 w-100 m-0 align-items-center justify-content-center">

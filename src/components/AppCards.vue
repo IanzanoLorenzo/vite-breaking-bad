@@ -11,7 +11,7 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="col-6 col-xl-3 g-3">
+    <div class="col-6 col-lg-4 col-xl-3 g-3">
         <div class="card" :style="`background-color: ${backgroundColors[type1]};border: ${backgroundColors[type1]} 20px solid`">
             <div class="row d-flex">
                 <div class="col-12 d-flex p-0 justify-content-center">
