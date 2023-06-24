@@ -4,7 +4,9 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="ball"></div>
+  <div class="ball">
+
+  </div>
 </template>
 <style lang="scss" scoped>
 .ball {

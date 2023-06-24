@@ -7,19 +7,27 @@ export default {
         image   :   String,
         position:   Number,
         backgroundColors: Object
+    },
+    computed:{
+        nameUpper(){
+            return this.pokemonName.toUpperCase()
+        },
+        colorCard(){
+            return this.backgroundColors[this.type1]
+        }
     }
 }
 </script>
 <template lang="">
-    <div class="col-6 col-lg-4 col-xl-3 g-3">
-        <div class="card" :style="`background-color: ${backgroundColors[type1]};border: ${backgroundColors[type1]} 20px solid`">
+    <div class="col-6 col-lg-4 g-3">
+        <div class="card" :style="`background-color: ${colorCard};border: ${colorCard} 20px solid`">
             <div class="row d-flex">
                 <div class="col-12 d-flex p-0 justify-content-center">
                     <img :src="image" alt="">
                 </div>
                 <div class="col-12 p-0 d-flex flex-column align-items-center">
                     <h5>Number {{ position }}</h5>
-                    <h4>{{ pokemonName }}</h4>
+                    <h4>{{ nameUpper }}</h4>
                     <p>Type: {{ type1 }}{{type2 === null ? '' : ',' + ' ' + type2 }}</p>
                 </div>
             </div>
@@ -44,6 +52,9 @@ export default {
         h4,
         p{
             height: 30px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 </style>

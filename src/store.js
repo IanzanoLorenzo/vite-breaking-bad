@@ -1,11 +1,14 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-    apiURL: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=24&sort=_id',
+    baseApiUrl: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=12&sort=_id',
+    apiURL: '',
+    currentApiURL: '',
     apiTypes: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons/types1',
     pokemons: [],
     types: [],
     selectedType : '',
+    nameSearched: '',
     typesColors: {
         Bug : 'rgb(163, 231, 99)',
         Dark : 'rgb(77, 77, 77)',
@@ -15,7 +18,7 @@ export const store = reactive({
         Fighting : 'rgb(158, 76, 76)',
         Fire : 'rgb(255, 0, 0)',
         Flying : 'rgb(173, 216, 230)',
-        Ghost : 'rgb(44, 0, 44)',
+        Ghost : 'rgb(100, 0, 150)',
         Grass : 'rgb(76, 158, 76)',
         Ground : 'rgb(158, 123, 9)',
         Ice : 'rgb(106, 186, 212)',
@@ -26,5 +29,7 @@ export const store = reactive({
         Steel : 'rgb(148, 148, 148)',
         Water : 'rgb(0, 0, 255)'
     },
-    loading : false
+    loading : false,
+    currentPage: 0,
+    totalPages: 0
 })
